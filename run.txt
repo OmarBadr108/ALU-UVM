@@ -1,0 +1,9 @@
+vlib work
+vlog -f source.txt +cover -covercells
+vsim -voptargs=+accs work.top -sv_seed 2360443213 -cover +UVM_VERBOSITY=UVM_HIGH
+
+add wave -position insertpoint sim:/top/inf/*
+
+run -all
+
+#quit -sim
