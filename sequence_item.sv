@@ -13,8 +13,8 @@ class alu_sequence_item extends uvm_sequence_item ;
 	// signals
 	//------------------------------------------------------------------------------
 	rand logic       reset ;
-	rand logic [7:0] A ;
-	rand logic [7:0] B ;
+	rand logic  [7:0] A ;
+	rand logic  [7:0] B ;
 	rand logic [3:0] op_code ;
 	
 	logic [7:0] result ;

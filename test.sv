@@ -38,16 +38,25 @@ class alu_test extends uvm_test ;
 			`uvm_info("TEST CLASS","RUN phase",UVM_HIGH)
 
 			phase.raise_objection(this);
+				
 				// reset seq
 				reset_seq.start(env.agent.seqr); // takes the path of the sequence
 				#10 ;
-			`uvm_info("TEST CLASS","END OF RST SEQUENCE",UVM_HIGH)
 				// test sequence
-				repeat(10000) begin 
+				repeat(5000) begin 
+					test_seq.start(env.agent.seqr); // takes the path of the sequence
+					#10 ;
+				end
+				// reset sequence again 
+				repeat(10) begin 
+					reset_seq.start(env.agent.seqr); // takes the path of the sequence
+					#10 ;
+				end
+				// test sequences again
+				repeat(5000) begin 
 					test_seq.start(env.agent.seqr); // takes the path of the sequence
 					#10 ;
 				end 
-
 			`uvm_info("TEST CLASS","END of RUN phase",UVM_HIGH)
 			// drop objection to indicate the ending of the test
 			phase.drop_objection(this);

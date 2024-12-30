@@ -2,7 +2,6 @@
 //ALU Design Version 1.0
 //--------------------------------------------------------
 
-
 /* 
 ALU Arithmetic and Logic Operations
 ----------------------------------------------------------------------
@@ -18,8 +17,6 @@ ALU Arithmetic and Logic Operations
 ----------------------------------------------------------------------
 */
 
-
-
 //--------------------------------------------------------
 // NOTE TO A VERIFICATION ENGINEER:
 //
@@ -27,12 +24,6 @@ ALU Arithmetic and Logic Operations
 // DESIGN AND TRY TO REVERSE ENGINEER WHAT'S HAPPENING.
 // JUST FOCUS ON GIVEN SPEC AND BUILD YOUR TESTBENCH ACCORDINGLY.
 //--------------------------------------------------------
-
-
-
-
-
-
 
 
 module alu(
@@ -62,7 +53,7 @@ module alu(
   end
 
 
-  always @(*) //introduce a bug here, A B sensitivity only, change ALU_Sel during
+  always @(*) 
     begin
       case(ALU_Sel)
         4'b0000: // Addition

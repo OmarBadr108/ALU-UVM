@@ -19,12 +19,12 @@ class alu_subscriber extends uvm_component ;
 
 
 	//---------------------------------------------------------------------------------
-	// Cover Groupe
+	// Cover Group
 	//---------------------------------------------------------------------------------
 
 	covergroup Inputs;
 
-		in_A : coverpoint inf.A  iff (!(inf.reset)) 
+		in_A : coverpoint inf.A /*curr_trans.A*/  iff (!(inf.reset)) 
 		{ 
 			bins extreme_low  = {8'h00};
 			bins low      [3] = {[8'd1:8'd85]};
